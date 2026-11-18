@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sugar Chef - Pastelería Fina & Tortas Personalizadas</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- CSS Principal -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- JavaScript Externo con atributo defer (Semana 11 & 13) -->
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+
+  <!-- ===================================================
+       NAVEGACIÓN Y MENÚ HAMBURGUESA RESPONSIVO (Semana 14)
+       =================================================== -->
+  <header class="main-header">
+    <nav class="navbar">
+      <a href="#inicio" class="logo">
+        <!-- AGREGAR IMAGEN DEL LOGO CIRCULAR AQUÍ (img/logo-sugar-chef.png) -->
+        <img src="img/logo-sugar-chef.png" alt="Logo Sugar Chef" class="logo-img" onerror="this.style.display='none'">
+        <span>SUGAR CHEF</span>
+      </a>
+
+      <!-- Botón Hamburguesa Accesible (WAI-ARIA) -->
+      <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menú de navegación" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+      <!-- Enlaces de Navegación (Drawer en móvil) -->
+      <ul id="nav-links" class="nav-links">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#paquetes">Paquetes</a></li>
+        <li><a href="#bocaditos">Bocaditos</a></li>
+        <li><a href="#kekes">Sabores</a></li>
+        <li><a href="#cotizador">Armar Comanda</a></li>
+        <li>
+          <button type="button" id="open-modal-btn" class="btn-nav">
+            <i class="fa-solid fa-bolt"></i> Cotización Rápida
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===================================================
+       HERO BANNER CON IMAGEN DE FONDO
+       =================================================== -->
+  <section id="inicio" class="hero">
+    <div class="container hero-content-wrapper">
+      <div class="hero-content">
+        <span class="badge"><i class="fa-solid fa-sparkles"></i> Pastelería Fina</span>
+        <h1>Tortas y Bocaditos Personalizados para tus Momentos Especiales</h1>
+        <p>Diseños exclusivos con la mejor calidad en insumos. Entregas a todo Lima (atención especial en Lima Sur y Centro).</p>
+        <div class="hero-buttons">
+          <a href="#cotizador" class="btn btn-primary"><i class="fa-solid fa-clipboard-list"></i> Armar mi Comanda</a>
+          <a href="https://wa.me/message/G7JCZMBYDXFGN1" target="_blank" class="btn btn-whatsapp">
+            <i class="fa-brands fa-whatsapp"></i> Chat Directo
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================
+       SECCIÓN DE PAQUETES TEMÁTICOS
+       =================================================== -->
+  <section id="paquetes" class="container section">
+    <h2 class="section-title">Nuestros Paquetes Temáticos</h2>
+    <p class="section-subtitle">Promociones ideales para celebraciones inolvidables. Pedidos con mínimo 5 días de anticipación.</p>
+
+    <div class="cards-grid">
+
+      <!-- Paquete Small -->
+      <article class="card">
+        <div class="card-img-wrapper">
+          <!-- AGREGAR IMAGEN DE LA TORTA MINNIE ROJA DEL PAQUETE SMALL AQUÍ (img/paquete-small.jpg) -->
+          <img src="img/paquete-small.jpg" alt="Torta temática Paquete Small" class="card-img">
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <h3>Paquete Small</h3>
+            <span class="price">S/ 159</span>
+          </div>
+          <ul class="card-features">
+            <li><i class="fa-solid fa-check"></i> Torta para 25 personas</li>
+            <li><i class="fa-solid fa-check"></i> 6 cupcakes</li>
+            <li><i class="fa-solid fa-check"></i> 6 cakepops</li>
+            <li><i class="fa-solid fa-check"></i> 1 velita</li>
+          </ul>
+          <button type="button" class="btn btn-card btn-select-pkg" data-paquete="Paquete Small" data-precio="159">
+            <i class="fa-solid fa-cart-plus"></i> Elegir Paquete
+          </button>
+        </div>
+      </article>
+
+      <!-- Paquete Medio -->
+      <article class="card card-featured">
+        <div class="featured-tag">Más Popular</div>
+        <div class="card-img-wrapper">
+          <!-- AGREGAR IMAGEN DE LA TORTA ROSADA 2 PISOS DEL PAQUETE MEDIO AQUÍ (img/paquete-medio.jpg) -->
+          <img src="img/paquete-medio.jpg" alt="Torta temática 2 pisos Paquete Medio" class="card-img">
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <h3>Paquete Medio</h3>
+            <span class="price">S/ 199</span>
+          </div>
+          <ul class="card-features">
+            <li><i class="fa-solid fa-check"></i> Torta de 2 pisos (25 personas)</li>
+            <li><i class="fa-solid fa-check"></i> 6 cupcakes y 6 cakepops</li>
+            <li><i class="fa-solid fa-check"></i> 6 conos wafer</li>
+            <li><i class="fa-solid fa-check"></i> 1 velita</li>
+          </ul>
+          <button type="button" class="btn btn-primary btn-card btn-select-pkg" data-paquete="Paquete Medio" data-precio="199">
+            <i class="fa-solid fa-cart-plus"></i> Elegir Paquete
+          </button>
+        </div>
+      </article>
+
+      <!-- Paquete Grande -->
+      <article class="card">
+        <div class="card-img-wrapper">
+          <!-- AGREGAR IMAGEN DE LA TORTA BAUTIZO OSITOS DEL PAQUETE GRANDE AQUÍ (img/paquete-grande.jpg) -->
+          <img src="img/paquete-grande.jpg" alt="Torta temática Bautizo Paquete Grande" class="card-img">
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <h3>Paquete Grande</h3>
+            <span class="price">S/ 239</span>
+          </div>
+          <ul class="card-features">
+            <li><i class="fa-solid fa-check"></i> Torta de 2 pisos (25 personas)</li>
+            <li><i class="fa-solid fa-check"></i> 6 cupcakes & 6 cakepops</li>
+            <li><i class="fa-solid fa-check"></i> 6 lacepops & 6 galletas</li>
+            <li><i class="fa-solid fa-check"></i> 6 conos wafer & 1 velita</li>
+          </ul>
+          <button type="button" class="btn btn-card btn-select-pkg" data-paquete="Paquete Grande" data-precio="239">
+            <i class="fa-solid fa-cart-plus"></i> Elegir Paquete
+          </button>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ===================================================
+       SECCIÓN BOCADITOS PERSONALIZADOS
+       =================================================== -->
+  <section id="bocaditos" class="container section">
+    <h2 class="section-title">Bocaditos Personalizados</h2>
+    <p class="section-subtitle">Precios por media docena. Agrega los que necesites para complementar tu mesa.</p>
+
+    <!-- Galería visual rápida de bocaditos -->
+    <div class="bocaditos-gallery">
+      <div class="gallery-thumb">
+        <!-- AGREGAR IMAGEN DE CUPCAKES PANDA AQUÍ (img/bocadito-cupcakes.jpg) -->
+        <img src="img/bocadito-cupcakes.jpg" alt="Cupcakes personalizados">
+        <span>Cupcakes</span>
+      </div>
+      <div class="gallery-thumb">
+        <!-- AGREGAR IMAGEN DE GALLETAS CORAZÓN AQUÍ (img/bocadito-galletas.jpg) -->
+        <img src="img/bocadito-galletas.jpg" alt="Galletas decoradas">
+        <span>Galletas</span>
+      </div>
+      <div class="gallery-thumb">
+        <!-- AGREGAR IMAGEN DE CAKEPOPS DORADOS AQUÍ (img/bocadito-cakepops.jpg) -->
+        <img src="img/bocadito-cakepops.jpg" alt="Cakepops">
+        <span>Cakepops</span>
+      </div>
+      <div class="gallery-thumb">
+        <!-- AGREGAR IMAGEN DE LACEPOPS BLANCOS AQUÍ (img/bocadito-lacepops.jpg) -->
+        <img src="img/bocadito-lacepops.jpg" alt="Lacepops">
+        <span>Lacepops</span>
+      </div>
+      <div class="gallery-thumb">
+        <!-- AGREGAR IMAGEN DE CHOCOREOS FLORES AQUÍ (img/bocadito-chocoreos.jpg) -->
+        <img src="img/bocadito-chocoreos.jpg" alt="Chocoreos">
+        <span>Chocoreos</span>
+      </div>
+    </div>
+
+    <!-- Lista de Precios -->
+    <div class="bocaditos-grid">
+      <div class="bocadito-item"><span>Cupcakes (1/2 doc.)</span><strong>S/ 29.00</strong></div>
+      <div class="bocadito-item"><span>Galletas (1/2 doc.)</span><strong>S/ 26.00</strong></div>
+      <div class="bocadito-item"><span>Cakepops (1/2 doc.)</span><strong>S/ 19.00</strong></div>
+      <div class="bocadito-item"><span>Lacepops (1/2 doc.)</span><strong>S/ 29.00</strong></div>
+      <div class="bocadito-item"><span>Manzanas (1/2 doc.)</span><strong>S/ 29.00</strong></div>
+      <div class="bocadito-item"><span>Macarrones (1/2 doc.)</span><strong>S/ 22.00</strong></div>
+      <div class="bocadito-item"><span>Alfajores (1/2 doc.)</span><strong>S/ 26.00</strong></div>
+      <div class="bocadito-item"><span>Brownies (1/2 doc.)</span><strong>S/ 33.00</strong></div>
+      <div class="bocadito-item"><span>Chocoreos (1/2 doc.)</span><strong>S/ 19.00</strong></div>
+      <div class="bocadito-item"><span>Chocopaletas (1/2 doc.)</span><strong>S/ 22.00</strong></div>
+    </div>
+  </section>
+
+  <!-- ===================================================
+       SECCIÓN SABORES CASEROS DE KEKES
+       =================================================== -->
+  <section id="kekes" class="container section">
+    <h2 class="section-title">Sabores Caseros de Kekes</h2>
+    <p class="section-subtitle">Elige el sabor base para tu torta o pedido individual.</p>
+
+    <div class="kekes-grid">
+      <article class="keke-card">
+        <!-- AGREGAR IMAGEN DE KEKE MARMOLEADO AQUÍ (img/keke-marmoleado.jpg) -->
+        <img src="img/keke-marmoleado.jpg" alt="Keke Marmoleado" class="keke-img">
+        <div class="keke-info">
+          <h4>Keke Marmoleado</h4>
+          <p>La mejor combinación en una sola tajada: keke de vainilla y chocolate.</p>
+        </div>
+      </article>
+
+      <article class="keke-card">
+        <!-- AGREGAR IMAGEN DE KEKE CHOCOCHIPS AQUÍ (img/keke-chocochips.jpg) -->
+        <img src="img/keke-chocochips.jpg" alt="Keke Chocochips" class="keke-img">
+        <div class="keke-info">
+          <h4>Keke Chocochips</h4>
+          <p>Rico keke elaborado a base de vainilla con abundantes chispas de chocolate.</p>
+        </div>
+      </article>
+
+      <article class="keke-card">
+        <!-- AGREGAR IMAGEN DE KEKE INDÚ AQUÍ (img/keke-indu.jpg) -->
+        <img src="img/keke-indu.jpg" alt="Keke Indú" class="keke-img">
+        <div class="keke-info">
+          <h4>Keke Indú</h4>
+          <p>Aromático y esponjoso keke elaborado a base de naranja natural.</p>
+        </div>
+      </article>
+
+      <article class="keke-card">
+        <!-- AGREGAR IMAGEN DE KEKE VAINILLA AQUÍ (img/keke-vainilla.jpg) -->
+        <img src="img/keke-vainilla.jpg" alt="Keke Vainilla" class="keke-img">
+        <div class="keke-info">
+          <h4>Keke Vainilla</h4>
+          <p>Esponjoso y húmedo keke tradicional sabor a vainilla.</p>
+        </div>
+      </article>
+
+      <article class="keke-card">
+        <!-- AGREGAR IMAGEN DE KEKE CHOCOLATE AQUÍ (img/keke-chocolate.jpg) -->
+        <img src="img/keke-chocolate.jpg" alt="Keke Chocolate" class="keke-img">
+        <div class="keke-info">
+          <h4>Keke Chocolate</h4>
+          <p>Delicioso keke sabor a chocolate elaborado con el mejor cacao peruano.</p>
+        </div>
+      </article>
+
+      <article class="keke-card">
+        <!-- AGREGAR IMAGEN DE KEKE INGLÉS AQUÍ (img/keke-ingles.jpg) -->
+        <img src="img/keke-ingles.jpg" alt="Keke Inglés" class="keke-img">
+        <div class="keke-info">
+          <h4>Keke Inglés</h4>
+          <p>Elaborado a base de vainilla con frutos secos: pecanas, almendras, pasas y avellanas.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===================================================
+       GENERADOR AUTOMÁTICO DE COMANDAS (Semanas 12 & 13)
+       =================================================== -->
+  <section id="cotizador" class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">Generador Automático de Comanda</h2>
+      <p class="section-subtitle">Arma tu pedido, agrega bocaditos adicionales y envía la comanda lista al WhatsApp de Sugar Chef.</p>
+
+      <form id="form-comanda" class="form-comanda">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="nombreCliente"><i class="fa-solid fa-user"></i> Nombre del Cliente:</label>
+            <input type="text" id="nombreCliente" required placeholder="Ej. Luciana Pérez">
+          </div>
+
+          <div class="form-group">
+            <label for="fechaEntrega"><i class="fa-solid fa-calendar-day"></i> Fecha de Entrega (Mín. 5 días):</label>
+            <input type="date" id="fechaEntrega" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="selectPaquete"><i class="fa-solid fa-box"></i> Paquete Temático:</label>
+            <select id="selectPaquete">
+              <option value="Sin Paquete" data-precio="0">Sin Paquete (Solo Bocaditos)</option>
+              <option value="Paquete Small" data-precio="159">Paquete Small - S/ 159.00</option>
+              <option value="Paquete Medio" data-precio="199">Paquete Medio - S/ 199.00</option>
+              <option value="Paquete Grande" data-precio="239">Paquete Grande - S/ 239.00</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="selectKeke"><i class="fa-solid fa-cookie"></i> Sabor de Keke:</label>
+            <select id="selectKeke">
+              <option value="Vainilla">Keke de Vainilla</option>
+              <option value="Marmoleado">Keke Marmoleado</option>
+              <option value="Chocochips">Keke Chocochips</option>
+              <option value="Chocolate">Keke de Chocolate</option>
+              <option value="Indú (Naranja)">Keke Indú (Naranja)</option>
+              <option value="Inglés">Keke Inglés (Frutos Secos)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Selector dinámico de Bocaditos Adicionales usando Arrays (Semana 12 & 13) -->
+        <div class="form-group">
+          <label for="selectBocadito"><i class="fa-solid fa-plus-circle"></i> Agregar Bocaditos (1/2 Docena):</label>
+          <div class="add-item-bar">
+            <select id="selectBocadito">
+              <option value="Cupcakes (1/2 doc.)" data-precio="29">Cupcakes - S/ 29.00</option>
+              <option value="Galletas (1/2 doc.)" data-precio="26">Galletas - S/ 26.00</option>
+              <option value="Cakepops (1/2 doc.)" data-precio="19">Cakepops - S/ 19.00</option>
+              <option value="Lacepops (1/2 doc.)" data-precio="29">Lacepops - S/ 29.00</option>
+              <option value="Manzanas (1/2 doc.)" data-precio="29">Manzanas - S/ 29.00</option>
+              <option value="Macarrones (1/2 doc.)" data-precio="22">Macarrones - S/ 22.00</option>
+              <option value="Alfajores (1/2 doc.)" data-precio="26">Alfajores - S/ 26.00</option>
+              <option value="Brownies (1/2 doc.)" data-precio="33">Brownies - S/ 33.00</option>
+              <option value="Chocoreos (1/2 doc.)" data-precio="19">Chocoreos - S/ 19.00</option>
+              <option value="Chocopaletas (1/2 doc.)" data-precio="22">Chocopaletas - S/ 22.00</option>
+            </select>
+            <button type="button" id="btn-agregar-bocadito" class="btn btn-primary">Agregar</button>
+          </div>
+          <!-- Lista dinámica en el DOM de bocaditos añadidos -->
+          <ul id="lista-adicionales" class="lista-adicionales"></ul>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="tematica"><i class="fa-solid fa-wand-magic-sparkles"></i> Temática o Nombre:</label>
+            <input type="text" id="tematica" placeholder="Ej. Minnie Roja / Luciana 2 años">
+          </div>
+
+          <div class="form-group">
+            <label for="distrito"><i class="fa-solid fa-location-dot"></i> Distrito de Entrega (Lima):</label>
+            <input type="text" id="distrito" required placeholder="Ej. Surco, Miraflores, VMT">
+          </div>
+        </div>
+
+        <!-- Resumen Dinámico en Vivo -->
+        <div class="form-summary">
+          <p id="detalle-resumen">Selecciona un paquete o agrega bocaditos para calcular.</p>
+          <h3>Total Estimado: <span id="total-monto">S/ 0.00</span></h3>
+        </div>
+
+        <button type="submit" class="btn btn-whatsapp btn-block">
+          <i class="fa-brands fa-whatsapp"></i> Enviar Comanda Lista a WhatsApp
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===================================================
+       VENTANA MODAL FLOTANTE DE CONSULTA RÁPIDA (Semana 14)
+       =================================================== -->
+  <div id="modal-overlay" class="modal-overlay" aria-hidden="true">
+    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <div class="modal-header">
+        <h3 id="modal-title"><i class="fa-solid fa-cake-candles"></i> Consulta Rápida Sugar Chef</h3>
+        <button type="button" id="close-modal-btn" class="close-btn" aria-label="Cerrar ventana">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p>¿Tienes una idea personalizada o necesitas verificar disponibilidad de fecha antes de armar tu comanda?</p>
+        <div class="modal-info-box">
+          <p><i class="fa-solid fa-clock"></i> <strong>Anticipación mínima:</strong> 5 días calendario.</p>
+          <p><i class="fa-solid fa-truck"></i> <strong>Cobertura:</strong> Todo Lima (Principalmente Lima Sur y Centro).</p>
+          <p><i class="fa-brands fa-whatsapp"></i> <strong>WhatsApp Directo:</strong> +51 922 445 727</p>
+        </div>
+        <div class="modal-actions">
+          <a href="https://wa.me/message/G7JCZMBYDXFGN1" target="_blank" class="btn btn-whatsapp btn-block">
+            <i class="fa-brands fa-whatsapp"></i> Hablar con un Asesor Ahora
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================================================
+       FOOTER
+       =================================================== -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>Sugar Chef</h3>
+        <p>Pastelería fina y bocaditos temáticos en Lima. Hacemos tus ideas realidad en dulce artísticamente.</p>
+      </div>
+      <div>
+        <h4>Contacto Directo</h4>
+        <p><i class="fa-brands fa-whatsapp"></i> +51 922 445 727</p>
+        <p><i class="fa-brands fa-instagram"></i> @sugarchef.lima.pe</p>
+      </div>
+      <div>
+        <h4>Zona de Atención</h4>
+        <p><i class="fa-solid fa-truck"></i> Entregas a todo Lima (Principalmente Lima Sur y Centro).</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Sugar Chef. Desarrollado con HTML5, CSS3 y JavaScript (DOM & Componentes Responsivos).</p>
+    </div>
+  </footer>
+
+</body>
+</html>
