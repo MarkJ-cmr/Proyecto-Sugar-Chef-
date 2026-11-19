@@ -5,41 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sugar Chef - Pastelería Fina & Tortas Personalizadas</title>
 
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <!-- CSS Principal -->
   <link rel="stylesheet" href="css/styles.css">
 
-  <!-- JavaScript Externo con atributo defer (Semana 11 & 13) -->
   <script src="js/app.js" defer></script>
 </head>
 <body>
 
-  <!-- ===================================================
-       NAVEGACIÓN Y MENÚ HAMBURGUESA RESPONSIVO (Semana 14)
-       =================================================== -->
   <header class="main-header">
     <nav class="navbar">
       <a href="#inicio" class="logo">
-        <!-- AGREGAR IMAGEN DEL LOGO CIRCULAR AQUÍ (img/logo-sugar-chef.png) -->
+ 
         <img src="img/logo-sugar-chef.png" alt="Logo Sugar Chef" class="logo-img" onerror="this.style.display='none'">
         <span>SUGAR CHEF</span>
       </a>
 
-      <!-- Botón Hamburguesa Accesible (WAI-ARIA) -->
       <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menú de navegación" aria-expanded="false">
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
       </button>
 
-      <!-- Enlaces de Navegación (Drawer en móvil) -->
       <ul id="nav-links" class="nav-links">
         <li><a href="#inicio">Inicio</a></li>
         <li><a href="#paquetes">Paquetes</a></li>
@@ -55,9 +46,6 @@
     </nav>
   </header>
 
-  <!-- ===================================================
-       HERO BANNER CON IMAGEN DE FONDO
-       =================================================== -->
   <section id="inicio" class="hero">
     <div class="container hero-content-wrapper">
       <div class="hero-content">
@@ -74,19 +62,14 @@
     </div>
   </section>
 
-  <!-- ===================================================
-       SECCIÓN DE PAQUETES TEMÁTICOS
-       =================================================== -->
   <section id="paquetes" class="container section">
     <h2 class="section-title">Nuestros Paquetes Temáticos</h2>
     <p class="section-subtitle">Promociones ideales para celebraciones inolvidables. Pedidos con mínimo 5 días de anticipación.</p>
 
     <div class="cards-grid">
 
-      <!-- Paquete Small -->
       <article class="card">
         <div class="card-img-wrapper">
-          <!-- AGREGAR IMAGEN DE LA TORTA MINNIE ROJA DEL PAQUETE SMALL AQUÍ (img/paquete-small.jpg) -->
           <img src="img/paquete-small.jpg" alt="Torta temática Paquete Small" class="card-img">
         </div>
         <div class="card-body">
@@ -106,11 +89,9 @@
         </div>
       </article>
 
-      <!-- Paquete Medio -->
       <article class="card card-featured">
         <div class="featured-tag">Más Popular</div>
         <div class="card-img-wrapper">
-          <!-- AGREGAR IMAGEN DE LA TORTA ROSADA 2 PISOS DEL PAQUETE MEDIO AQUÍ (img/paquete-medio.jpg) -->
           <img src="img/paquete-medio.jpg" alt="Torta temática 2 pisos Paquete Medio" class="card-img">
         </div>
         <div class="card-body">
@@ -130,10 +111,8 @@
         </div>
       </article>
 
-      <!-- Paquete Grande -->
       <article class="card">
         <div class="card-img-wrapper">
-          <!-- AGREGAR IMAGEN DE LA TORTA BAUTIZO OSITOS DEL PAQUETE GRANDE AQUÍ (img/paquete-grande.jpg) -->
           <img src="img/paquete-grande.jpg" alt="Torta temática Bautizo Paquete Grande" class="card-img">
         </div>
         <div class="card-body">
@@ -156,43 +135,33 @@
     </div>
   </section>
 
-  <!-- ===================================================
-       SECCIÓN BOCADITOS PERSONALIZADOS
-       =================================================== -->
   <section id="bocaditos" class="container section">
     <h2 class="section-title">Bocaditos Personalizados</h2>
     <p class="section-subtitle">Precios por media docena. Agrega los que necesites para complementar tu mesa.</p>
 
-    <!-- Galería visual rápida de bocaditos -->
     <div class="bocaditos-gallery">
       <div class="gallery-thumb">
-        <!-- AGREGAR IMAGEN DE CUPCAKES PANDA AQUÍ (img/bocadito-cupcakes.jpg) -->
         <img src="img/bocadito-cupcakes.jpg" alt="Cupcakes personalizados">
         <span>Cupcakes</span>
       </div>
       <div class="gallery-thumb">
-        <!-- AGREGAR IMAGEN DE GALLETAS CORAZÓN AQUÍ (img/bocadito-galletas.jpg) -->
         <img src="img/bocadito-galletas.jpg" alt="Galletas decoradas">
         <span>Galletas</span>
       </div>
       <div class="gallery-thumb">
-        <!-- AGREGAR IMAGEN DE CAKEPOPS DORADOS AQUÍ (img/bocadito-cakepops.jpg) -->
         <img src="img/bocadito-cakepops.jpg" alt="Cakepops">
         <span>Cakepops</span>
       </div>
       <div class="gallery-thumb">
-        <!-- AGREGAR IMAGEN DE LACEPOPS BLANCOS AQUÍ (img/bocadito-lacepops.jpg) -->
         <img src="img/bocadito-lacepops.jpg" alt="Lacepops">
         <span>Lacepops</span>
       </div>
       <div class="gallery-thumb">
-        <!-- AGREGAR IMAGEN DE CHOCOREOS FLORES AQUÍ (img/bocadito-chocoreos.jpg) -->
         <img src="img/bocadito-chocoreos.jpg" alt="Chocoreos">
         <span>Chocoreos</span>
       </div>
     </div>
 
-    <!-- Lista de Precios -->
     <div class="bocaditos-grid">
       <div class="bocadito-item"><span>Cupcakes (1/2 doc.)</span><strong>S/ 29.00</strong></div>
       <div class="bocadito-item"><span>Galletas (1/2 doc.)</span><strong>S/ 26.00</strong></div>
@@ -207,16 +176,12 @@
     </div>
   </section>
 
-  <!-- ===================================================
-       SECCIÓN SABORES CASEROS DE KEKES
-       =================================================== -->
   <section id="kekes" class="container section">
     <h2 class="section-title">Sabores Caseros de Kekes</h2>
     <p class="section-subtitle">Elige el sabor base para tu torta o pedido individual.</p>
 
     <div class="kekes-grid">
       <article class="keke-card">
-        <!-- AGREGAR IMAGEN DE KEKE MARMOLEADO AQUÍ (img/keke-marmoleado.jpg) -->
         <img src="img/keke-marmoleado.jpg" alt="Keke Marmoleado" class="keke-img">
         <div class="keke-info">
           <h4>Keke Marmoleado</h4>
@@ -225,7 +190,6 @@
       </article>
 
       <article class="keke-card">
-        <!-- AGREGAR IMAGEN DE KEKE CHOCOCHIPS AQUÍ (img/keke-chocochips.jpg) -->
         <img src="img/keke-chocochips.jpg" alt="Keke Chocochips" class="keke-img">
         <div class="keke-info">
           <h4>Keke Chocochips</h4>
@@ -234,7 +198,6 @@
       </article>
 
       <article class="keke-card">
-        <!-- AGREGAR IMAGEN DE KEKE INDÚ AQUÍ (img/keke-indu.jpg) -->
         <img src="img/keke-indu.jpg" alt="Keke Indú" class="keke-img">
         <div class="keke-info">
           <h4>Keke Indú</h4>
@@ -243,7 +206,6 @@
       </article>
 
       <article class="keke-card">
-        <!-- AGREGAR IMAGEN DE KEKE VAINILLA AQUÍ (img/keke-vainilla.jpg) -->
         <img src="img/keke-vainilla.jpg" alt="Keke Vainilla" class="keke-img">
         <div class="keke-info">
           <h4>Keke Vainilla</h4>
@@ -252,7 +214,6 @@
       </article>
 
       <article class="keke-card">
-        <!-- AGREGAR IMAGEN DE KEKE CHOCOLATE AQUÍ (img/keke-chocolate.jpg) -->
         <img src="img/keke-chocolate.jpg" alt="Keke Chocolate" class="keke-img">
         <div class="keke-info">
           <h4>Keke Chocolate</h4>
@@ -261,7 +222,6 @@
       </article>
 
       <article class="keke-card">
-        <!-- AGREGAR IMAGEN DE KEKE INGLÉS AQUÍ (img/keke-ingles.jpg) -->
         <img src="img/keke-ingles.jpg" alt="Keke Inglés" class="keke-img">
         <div class="keke-info">
           <h4>Keke Inglés</h4>
@@ -271,9 +231,6 @@
     </div>
   </section>
 
-  <!-- ===================================================
-       GENERADOR AUTOMÁTICO DE COMANDAS (Semanas 12 & 13)
-       =================================================== -->
   <section id="cotizador" class="section section-alt">
     <div class="container">
       <h2 class="section-title">Generador Automático de Comanda</h2>
@@ -316,7 +273,6 @@
           </div>
         </div>
 
-        <!-- Selector dinámico de Bocaditos Adicionales usando Arrays (Semana 12 & 13) -->
         <div class="form-group">
           <label for="selectBocadito"><i class="fa-solid fa-plus-circle"></i> Agregar Bocaditos (1/2 Docena):</label>
           <div class="add-item-bar">
@@ -334,7 +290,7 @@
             </select>
             <button type="button" id="btn-agregar-bocadito" class="btn btn-primary">Agregar</button>
           </div>
-          <!-- Lista dinámica en el DOM de bocaditos añadidos -->
+          
           <ul id="lista-adicionales" class="lista-adicionales"></ul>
         </div>
 
@@ -350,7 +306,6 @@
           </div>
         </div>
 
-        <!-- Resumen Dinámico en Vivo -->
         <div class="form-summary">
           <p id="detalle-resumen">Selecciona un paquete o agrega bocaditos para calcular.</p>
           <h3>Total Estimado: <span id="total-monto">S/ 0.00</span></h3>
@@ -363,9 +318,6 @@
     </div>
   </section>
 
-  <!-- ===================================================
-       VENTANA MODAL FLOTANTE DE CONSULTA RÁPIDA (Semana 14)
-       =================================================== -->
   <div id="modal-overlay" class="modal-overlay" aria-hidden="true">
     <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modal-title">
       <div class="modal-header">
@@ -388,9 +340,6 @@
     </div>
   </div>
 
-  <!-- ===================================================
-       FOOTER
-       =================================================== -->
   <footer class="footer">
     <div class="container footer-grid">
       <div>
