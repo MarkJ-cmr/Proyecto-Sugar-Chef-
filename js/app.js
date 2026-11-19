@@ -1,6 +1,3 @@
-// ===================================================
-// 1. MENÚ HAMBURGUESA RESPONSIVO (Semana 14)
-// ===================================================
 const menuToggle = document.getElementById('menu-toggle');
 const navLinks = document.getElementById('nav-links');
 
@@ -10,7 +7,6 @@ menuToggle.addEventListener('click', () => {
   menuToggle.setAttribute('aria-expanded', isActive);
 });
 
-// Cerrar menú automáticamente al hacer clic en un enlace
 document.querySelectorAll('.nav-links a').forEach((enlace) => {
   enlace.addEventListener('click', () => {
     navLinks.classList.remove('is-active');
@@ -19,9 +15,6 @@ document.querySelectorAll('.nav-links a').forEach((enlace) => {
   });
 });
 
-// ===================================================
-// 2. VENTANA MODAL FLOTANTE ACCESIBLE (Semana 14)
-// ===================================================
 const modalOverlay = document.getElementById('modal-overlay');
 const openModalBtn = document.getElementById('open-modal-btn');
 const closeModalBtn = document.getElementById('close-modal-btn');
@@ -29,36 +22,31 @@ const closeModalBtn = document.getElementById('close-modal-btn');
 const abrirModal = () => {
   modalOverlay.classList.add('is-visible');
   modalOverlay.setAttribute('aria-hidden', 'false');
-  document.body.style.overflow = 'hidden'; // Bloqueo de scroll
+  document.body.style.overflow = 'hidden'; 
 };
 
 const cerrarModal = () => {
   modalOverlay.classList.remove('is-visible');
   modalOverlay.setAttribute('aria-hidden', 'true');
-  document.body.style.overflow = 'auto'; // Restaurar scroll
+  document.body.style.overflow = 'auto'; 
 };
 
 openModalBtn.addEventListener('click', abrirModal);
 closeModalBtn.addEventListener('click', cerrarModal);
 
-// Cerrar al hacer clic fuera del cuadro de diálogo (Backdrop)
 modalOverlay.addEventListener('click', (e) => {
   if (e.target === modalOverlay) {
     cerrarModal();
   }
 });
 
-// Cerrar al presionar la tecla Escape
 window.addEventListener('keydown', (e) => {
   if (e.key === 'Escape' && modalOverlay.classList.contains('is-visible')) {
     cerrarModal();
   }
 });
 
-// ===================================================
-// 3. ARREGLOS Y MANIPULACIÓN DEL DOM PARA COMANDAS (Semanas 12 & 13)
-// ===================================================
-const bocaditosAgregados = []; // Arreglo en memoria
+const bocaditosAgregados = [];
 
 const selectPaquete = document.getElementById('selectPaquete');
 const selectBocadito = document.getElementById('selectBocadito');
@@ -68,7 +56,6 @@ const totalMontoEl = document.getElementById('total-monto');
 const detalleResumenEl = document.getElementById('detalle-resumen');
 const formComanda = document.getElementById('form-comanda');
 
-// Función para recalcular el total y actualizar el DOM de forma segura
 function actualizarTotal() {
   const opcionPaquete = selectPaquete.options[selectPaquete.selectedIndex];
   const precioPaquete = parseFloat(opcionPaquete.dataset.precio) || 0;
@@ -84,7 +71,6 @@ function actualizarTotal() {
   detalleResumenEl.textContent = `${opcionPaquete.value} + ${bocaditosAgregados.length} adicional(es) de bocaditos`;
 }
 
-// Renderizar lista de bocaditos en el DOM usando createElement y textContent (Prevención XSS)
 function renderizarBocaditos() {
   listaAdicionales.innerHTML = '';
 
@@ -111,7 +97,6 @@ function renderizarBocaditos() {
   });
 }
 
-// Evento al presionar "Agregar" bocadito
 btnAgregarBocadito.addEventListener('click', () => {
   const opcion = selectBocadito.options[selectBocadito.selectedIndex];
   const nombre = opcion.value;
@@ -122,10 +107,8 @@ btnAgregarBocadito.addEventListener('click', () => {
   actualizarTotal();
 });
 
-// Evento al cambiar de paquete en el <select>
 selectPaquete.addEventListener('change', actualizarTotal);
 
-// Seleccionar paquete directamente desde las tarjetas superiores
 document.querySelectorAll('.btn-select-pkg').forEach((boton) => {
   boton.addEventListener('click', () => {
     const nombrePaquete = boton.dataset.paquete;
@@ -142,11 +125,8 @@ document.querySelectorAll('.btn-select-pkg').forEach((boton) => {
   });
 });
 
-// ===================================================
-// 4. ENVÍO DE COMANDA FORMATEADA A WHATSAPP
-// ===================================================
 formComanda.addEventListener('submit', (e) => {
-  e.preventDefault(); // Evitar recarga de la página
+  e.preventDefault(); 
 
   const nombre = document.getElementById('nombreCliente').value.trim();
   const fecha = document.getElementById('fechaEntrega').value;
@@ -172,7 +152,6 @@ formComanda.addEventListener('submit', (e) => {
     `📍 *Distrito:* ${distrito}%0A` +
     `💰 *TOTAL ESTIMADO:* ${total}`;
 
-  // Número oficial de la empresa (+51 922 445 727)
   const telefonoEmpresa = '51922445727';
   const urlWhatsApp = `https://wa.me/${telefonoEmpresa}?text=${mensaje}`;
 
